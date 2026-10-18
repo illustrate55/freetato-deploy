@@ -1,0 +1,22 @@
+# секреты
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+certs/*
+!certs/README.md
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# прочее
+.idea/
+.vscode/
+*.log
+node_modules/
+.DS_Store

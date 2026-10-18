@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Преподавание — FREETATO ДПО</title>
+  <link rel="icon" type="image/png" href="/assets/img/dino/icon.png">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/pages/teacher.css">
+  <script src="/js/config.js"></script>
+  <script src="/js/auth-guard.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    /* Critical layout: применяется до загрузки внешних CSS — устраняет FOUC. */
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',Arial,sans-serif;background:#F5F5F5;color:#1A1A1A;line-height:1.5}
+    .app-header{height:56px;background:#FFF;border-bottom:1px solid #E0E0E0;display:flex;align-items:center;padding:0 20px;position:sticky;top:0;z-index:10}
+    .app-layout{display:grid;grid-template-columns:208px 1fr;min-height:calc(100vh - 56px)}
+    .app-sidebar{background:#FFF;border-right:1px solid #E0E0E0}
+    .app-layout__main{padding:20px;min-width:0}
+    .catalog__layout{display:grid;grid-template-columns:280px 1fr;gap:16px;align-items:start}
+    .my-courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+    .hidden{display:none !important}
+    @media(max-width:767px){.app-layout{grid-template-columns:1fr}.app-sidebar{display:none}.catalog__layout{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header id="header"></header>
+  <div class="app-layout">
+    <aside id="sidebar"></aside>
+    <main class="app-layout__main">
+      <div class="flex items-center justify-between mb-16">
+        <h1>Преподавание</h1>
+        <button class="btn btn-primary" id="create-course-btn">+ Создать курс</button>
+      </div>
+      <div class="dashboard__kpi" id="kpi-row" style="grid-template-columns:repeat(3,1fr); max-width:none"></div>
+      <h2 class="mt-32 mb-16">Мои курсы</h2>
+      <div id="my-courses-area"></div>
+    </main>
+  </div>
+  <script type="module" src="/js/pages/teacher.js"></script>
+</body>
+</html>

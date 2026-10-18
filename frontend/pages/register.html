@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — FREETATO ДПО</title>
+  <link rel="icon" type="image/png" href="/assets/img/dino/icon.png">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/login.css">
+  <link rel="stylesheet" href="/css/pages/register.css">
+  <script src="/js/config.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-page__left">
+      <img src="/assets/img/dino/main-dino.png" alt="" class="auth-page__dino">
+      <h1 class="auth-page__slogan">Подберём программу<br>под твои цели.</h1>
+    </div>
+    <div class="auth-page__right">
+      <!-- Шаг 1 -->
+      <form id="step-1" class="auth-form">
+        <p class="register__step-label" id="step-1-label">Шаг 1 из 2</p>
+        <h2 class="auth-form__title">Регистрация</h2>
+
+        <div class="form-group">
+          <label class="form-label">Я регистрируюсь как</label>
+          <div class="register__role-group" id="role-group">
+            <button type="button" class="register__role-btn is-active" data-role="student">Студент</button>
+            <button type="button" class="register__role-btn" data-role="teacher">Преподаватель</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" class="input" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="last_name">Фамилия</label>
+            <input type="text" id="last_name" class="input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="first_name">Имя</label>
+            <input type="text" id="first_name" class="input" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Пароль</label>
+          <input type="password" id="password" class="input" required minlength="8" autocomplete="new-password">
+          <div class="strength-meter"><div class="strength-meter__fill" id="strength-fill"></div></div>
+          <div class="form-hint" id="strength-hint">Минимум 8 символов</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password_confirm">Подтверждение пароля</label>
+          <input type="password" id="password_confirm" class="input" required>
+        </div>
+        <label class="auth-form__remember">
+          <input type="checkbox" id="terms" required>
+          Согласен с условиями
+        </label>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="step-1-submit">Продолжить →</button>
+        <p class="auth-form__hint">
+          Уже есть аккаунт? <a href="/pages/login.html" class="link">Войти</a>
+        </p>
+      </form>
+
+      <!-- Шаг 2 -->
+      <form id="step-2" class="auth-form hidden">
+        <p class="register__step-label">Шаг 2 из 2</p>
+        <h2 class="auth-form__title">Подберём программу для вас</h2>
+
+        <h3 class="register__block-title">Какие направления вам интересны?</h3>
+        <div class="register__directions" id="directions"></div>
+
+        <h3 class="register__block-title">Ваш текущий уровень</h3>
+        <div class="level-group" id="current-level">
+          <button type="button" class="level-btn" data-value="beginner">Начинающий</button>
+          <button type="button" class="level-btn" data-value="junior">Junior</button>
+          <button type="button" class="level-btn" data-value="middle">Middle</button>
+        </div>
+
+        <h3 class="register__block-title">Желаемый уровень</h3>
+        <div class="level-group" id="target-level">
+          <button type="button" class="level-btn" data-value="junior">Junior</button>
+          <button type="button" class="level-btn" data-value="middle">Middle</button>
+          <button type="button" class="level-btn" data-value="senior">Senior</button>
+        </div>
+
+        <div class="register__buttons">
+          <button type="button" class="btn btn-ghost" id="back-btn">← Назад</button>
+          <button type="submit" class="btn btn-primary" id="finish-btn" disabled>Завершить регистрацию</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type="module" src="/js/pages/register.js"></script>
+</body>
+</html>

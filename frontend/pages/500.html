@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 — FREETATO ДПО</title>
+  <link rel="icon" type="image/png" href="/assets/img/dino/icon.png">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <style>
+    .err-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .err-page__dino { width: 200px; image-rendering: pixelated; margin-bottom: 24px; }
+    .err-page__code { font-size: 96px; font-weight: 800; color: var(--color-primary); line-height: 1; }
+    .err-page__title { font-size: 22px; margin: 16px 0 8px; }
+    .err-page__text { color: var(--color-text-muted); margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="err-page">
+    <img src="/assets/img/dino/dinoCon2.png" alt="" class="err-page__dino">
+    <div class="err-page__code">500</div>
+    <h1 class="err-page__title">Внутренняя ошибка сервера</h1>
+    <p class="err-page__text">Что-то пошло не так. Динозавр уже разбирается…</p>
+    <a href="/pages/dashboard.html" class="btn btn-primary">На главную</a>
+  </div>
+</body>
+</html>

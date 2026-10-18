@@ -1,0 +1,57 @@
+.course-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-2) 100%);
+  color: #fff;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.course-hero__breadcrumb { font-size: 13px; opacity: 0.85; margin-bottom: 10px; }
+.course-hero__breadcrumb a { color: #fff; text-decoration: underline; }
+.course-hero__title { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+.course-hero__desc { opacity: 0.9; max-width: 720px; margin-bottom: 14px; }
+.course-hero__meta { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; opacity: 0.9; }
+.course-hero__progress { max-width: 480px; margin-top: 14px; }
+.course-hero__progress-label { font-size: 13px; margin-bottom: 6px; opacity: 0.95; }
+.course-hero__progress .progress { background: rgba(255, 255, 255, 0.25); }
+.course-hero__action { margin-top: 20px; }
+
+.course-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.course-body__main { background: var(--color-surface); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-card); }
+.course-body__side { background: var(--color-surface); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-card); height: fit-content; }
+.module {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.module__header {
+  padding: 12px 16px;
+  background: var(--color-bg);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.module__lessons { padding: 8px; }
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.lesson-row__icon { color: var(--color-primary); }
+.lesson-row__status.is-done { color: var(--color-success); }
+.lesson-row a { color: var(--color-text); flex: 1; }
+.lesson-row:hover { background: var(--color-bg); }
+
+@media (max-width: 900px) { .course-body { grid-template-columns: 1fr; } }

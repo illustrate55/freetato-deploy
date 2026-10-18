@@ -1,0 +1,11 @@
+# Production overlay. Применяется автоматически Compose'ом, если лежит рядом с
+# основным docker-compose.yml. Добавляет HTTPS на 443 и подменяет nginx.conf.
+services:
+  nginx:
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./_deploy/nginx.prod.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx/certs:/etc/nginx/certs:ro

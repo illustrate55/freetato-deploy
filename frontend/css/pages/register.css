@@ -1,0 +1,86 @@
+.register__step-label {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.register__block-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+}
+.register__buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+}
+.auth-form .register__buttons button.btn {
+  flex: 1;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 0;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.strength-meter {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.strength-meter__fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-error);
+  transition: all 0.2s;
+}
+.strength-meter__fill.medium { width: 60%; background: var(--color-warning); }
+.strength-meter__fill.strong { width: 100%; background: var(--color-success); }
+
+.register__directions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.register__role-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.register__role-btn {
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), color var(--transition);
+}
+.register__role-btn:hover { border-color: var(--color-primary-hover); }
+.register__role-btn.is-active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+  .register__directions { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .auth-page__right { padding: 16px; align-items: flex-start; padding-top: 32px; }
+  .auth-form { padding-bottom: 32px; }
+}

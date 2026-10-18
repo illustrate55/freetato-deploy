@@ -1,0 +1,112 @@
+/* === Header === */
+.app-header {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
+}
+.app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text);
+}
+.app-header__brand img { width: 28px; height: 28px; image-rendering: pixelated; }
+.app-header__spacer { flex: 1; }
+.app-header__user {
+  position: relative;
+}
+.app-header__user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+}
+.app-header__user-btn:hover { background: var(--color-bg); }
+.app-header__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  min-width: 180px;
+  padding: 4px;
+  z-index: 200;
+}
+.app-header__menu a, .app-header__menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+.app-header__menu a:hover, .app-header__menu button:hover { background: var(--color-bg); }
+
+/* === Sidebar === */
+.app-sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 20px 10px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+.app-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  transition: background var(--transition);
+}
+.app-sidebar__item:hover { background: var(--color-bg); }
+.app-sidebar__item.is-active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* === Layout pages === */
+.app-layout {
+  display: flex;
+  min-height: calc(100vh - var(--header-height));
+}
+.app-layout__main {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* === Адаптивность === */
+@media (max-width: 768px) {
+  .app-sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    height: calc(100vh - var(--header-height));
+    transition: left 0.3s ease;
+    z-index: 99;
+  }
+  .app-sidebar.is-open { left: 0; }
+  .app-layout__main { padding: 14px; }
+  .app-header { padding: 0 14px; }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  :root { --sidebar-width: 56px; }
+  .app-sidebar__item span { display: none; }
+}
